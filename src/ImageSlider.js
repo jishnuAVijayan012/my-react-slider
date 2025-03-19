@@ -4,7 +4,6 @@ import './ImageSlider.css'; // Import the CSS file
 const ImageSlider = ({ images }) => {
     const [imgId, setImgId] = useState(1);
 
-
     const slideImage = () => {
         const displayWidth = document.querySelector('.img-showcase img:first-child')?.clientWidth || 0;
         document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
