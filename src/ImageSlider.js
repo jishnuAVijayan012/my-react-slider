@@ -49,10 +49,7 @@ const ImageSlider = ({ images }) => {
                     </div>
                 </div>
 
-                {/* Card Right */}
-                {/* <div className="product-content">
-                    <h2 className="product-title">{product?.name || "Product Name"}</h2>
-                </div> */}
+
             </div>
         </div>
     );
