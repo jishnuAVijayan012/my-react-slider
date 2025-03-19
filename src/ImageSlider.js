@@ -4,8 +4,6 @@ import './ImageSlider.css'; // Import the CSS file
 const ImageSlider = ({ images }) => {
     const [imgId, setImgId] = useState(1);
 
-    // Dynamically fetch images from the product prop
-    // const images = product?.images || [];
 
     const slideImage = () => {
         const displayWidth = document.querySelector('.img-showcase img:first-child')?.clientWidth || 0;
