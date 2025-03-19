@@ -23,5 +23,13 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3"
   },
-  "description": ""
+  "description": "A reusable image slider",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jishnuAVijayan012/my-react-slider.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jishnuAVijayan012/my-react-slider/issues"
+  },
+  "homepage": "https://github.com/jishnuAVijayan012/my-react-slider#readme"
 }
