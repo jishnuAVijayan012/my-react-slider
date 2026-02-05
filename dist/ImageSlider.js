@@ -23,13 +23,34 @@ var ImageSlider = function ImageSlider(_ref) {
     _useState2 = _slicedToArray(_useState, 2),
     imgId = _useState2[0],
     setImgId = _useState2[1];
+  var videoRefs = (0, _react.useRef)([]);
+  var isVideo = function isVideo(url) {
+    return url === null || url === void 0 ? void 0 : url.match(/\.(mp4|webm|ogg|mov|avi|wmv)$/i);
+  };
   var slideImage = function slideImage() {
     var _document$querySelect;
-    var displayWidth = ((_document$querySelect = document.querySelector('.img-showcase img:first-child')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.clientWidth) || 0;
+    var displayWidth = ((_document$querySelect = document.querySelector('.img-showcase img:first-child, .img-showcase video:first-child')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.clientWidth) || 0;
     document.querySelector('.img-showcase').style.transform = "translateX(".concat(-(imgId - 1) * displayWidth, "px)");
+  };
+
+  // Pause all videos except the current one
+  var handleVideoPlayback = function handleVideoPlayback() {
+    videoRefs.current.forEach(function (video, index) {
+      if (video) {
+        if (index + 1 === imgId) {
+          // Current video - you can choose to auto-play or let user control
+          // video.play().catch(e => console.log('Auto-play prevented:', e));
+        } else {
+          // Other videos - pause and reset
+          video.pause();
+          video.currentTime = 0;
+        }
+      }
+    });
   };
   (0, _react.useEffect)(function () {
     slideImage();
+    handleVideoPlayback();
   }, [imgId]);
   (0, _react.useEffect)(function () {
     var handleResize = function handleResize() {
@@ -50,15 +71,30 @@ var ImageSlider = function ImageSlider(_ref) {
     className: "img-display"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "img-showcase"
-  }, images.map(function (image, index) {
-    return /*#__PURE__*/_react["default"].createElement("img", {
+  }, images.map(function (media, index) {
+    return isVideo(media) ? /*#__PURE__*/_react["default"].createElement("video", {
       key: index,
-      src: image,
+      ref: function ref(el) {
+        return videoRefs.current[index] = el;
+      },
+      controls: true,
+      muted: true,
+      preload: "metadata",
+      style: {
+        width: '100%',
+        height: 'auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("source", {
+      src: media,
+      type: "video/mp4"
+    }), "Your browser does not support the video tag.") : /*#__PURE__*/_react["default"].createElement("img", {
+      key: index,
+      src: media,
       alt: "Product ".concat(index + 1)
     });
   }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: "img-select"
-  }, images.map(function (image, index) {
+  }, images.map(function (media, index) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: "img-item",
       key: index
@@ -69,8 +105,22 @@ var ImageSlider = function ImageSlider(_ref) {
         e.preventDefault();
         setImgId(index + 1);
       }
-    }, /*#__PURE__*/_react["default"].createElement("img", {
-      src: image,
+    }, isVideo(media) ? /*#__PURE__*/_react["default"].createElement("div", {
+      className: "video-thumbnail"
+    }, /*#__PURE__*/_react["default"].createElement("video", {
+      muted: true,
+      preload: "metadata",
+      style: {
+        width: '100%',
+        height: 'auto'
+      }
+    }, /*#__PURE__*/_react["default"].createElement("source", {
+      src: media,
+      type: "video/mp4"
+    })), /*#__PURE__*/_react["default"].createElement("div", {
+      className: "play-icon"
+    }, "\u25B6")) : /*#__PURE__*/_react["default"].createElement("img", {
+      src: media,
       alt: "Product Thumbnail ".concat(index + 1)
     })));
   })))));
