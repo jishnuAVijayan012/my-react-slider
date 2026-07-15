@@ -2,7 +2,7 @@
 ![image](https://github.com/user-attachments/assets/c3535870-cfe4-46dc-8cf2-eca7ceecc8b7)
 
 
-# React Image Slider
+# React Media Slider – Display Images and Videos in a Single Slider
 ----
 This project is a simple **React Image Slider** using the `my-react-image-slider-jav` package.  
 It displays product images in a slider format.
@@ -12,7 +12,14 @@ It displays product images in a slider format.
 First, install the required package using npm:
 
 ```sh
+
+First, install the required package using npm:
+
 npm install my-react-image-slider-jav
+
+or
+
+yarn add my-react-image-slider-jav
 
 Usage
 Import and use the ImageSlider component in your React application:
