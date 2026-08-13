@@ -17,7 +17,8 @@ Perfect for product galleries, portfolios, e-commerce websites, promotional cont
 
        ◀   ● ● ● ● ●   ▶
 
-npm install my-react-image-slider-jav
+**npm install my-react-image-slider-jav**
+
 
 ## ✨ Features
 
