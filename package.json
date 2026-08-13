@@ -1,7 +1,7 @@
 {
   "name": "my-react-image-slider-jav",
   "version": "1.0.8",
-  "description": "A reusable image slider",
+  "description": "A lightweight React media slider for displaying images and videos together in a responsive slider and reusable  slider",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -12,9 +12,20 @@
   },
   "keywords": [
     "react",
-    "slider",
-    "carousel",
-    "image slider"
+    "react-slider",
+    "react-carousel",
+    "react-image-slider",
+    "react-image-gallery",
+    "react-video-slider",
+    "react-media-slider",
+    "react-media-gallery",
+    "react-image-video-slider",
+    "react-gallery",
+    "react-responsive-slider",
+    "react-swipe-slider",
+    "image-slider",
+    "video-slider",
+    "media-slider"
   ],
   "author": "JAV",
   "license": "MIT",
