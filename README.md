@@ -7,6 +7,17 @@
 A lightweight and customizable React media slider for displaying **images and videos together in a single, responsive slider**.
 
 Perfect for product galleries, portfolios, e-commerce websites, promotional content, media showcases, and modern React applications.
+[Live Demo] [GitHub] [npm]
+
+       ┌──────────────────────────┐
+       │                          │
+       │      IMAGE / VIDEO       │
+       │                          │
+       └──────────────────────────┘
+
+       ◀   ● ● ● ● ●   ▶
+
+npm install my-react-image-slider-jav
 
 ## ✨ Features
 
