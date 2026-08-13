@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ImageSlider.css'; // Import the CSS file
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ media }) => {
     const [imgId, setImgId] = useState(1);
     const videoRefs = useRef([]);
 
@@ -48,7 +48,7 @@ const ImageSlider = ({ images }) => {
                 <div className="product-imgs">
                     <div className="img-display">
                         <div className="img-showcase">
-                            {images.map((media, index) => (
+                            {media.map((media, index) => (
                                 isVideo(media) ? (
                                     <video
                                         key={index}
@@ -72,7 +72,7 @@ const ImageSlider = ({ images }) => {
                         </div>
                     </div>
                     <div className="img-select">
-                        {images.map((media, index) => (
+                        {media.map((media, index) => (
                             <div className="img-item" key={index}>
                                 <a
                                     href="#"
